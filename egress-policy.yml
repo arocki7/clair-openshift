@@ -1,0 +1,30 @@
+---
+kind: EgressNetworkPolicy
+metadata:
+  name: "egress-clair"
+  namespace: "clair"
+  labels:
+    owner: DevOps
+spec:
+  egress:
+  - to:
+      dnsName: www.redhat.com
+    type: Allow
+  - to:
+      dnsName: linux.oracle.com
+    type: Allow
+  - to:
+      dnsName: security-tracker.debian.org
+    type: Allow
+  - to:
+      dnsName: github.com
+    type: Allow
+  - to:
+      dnsName: git.launchpad.net
+    type: Allow
+  - to:
+      dnsName: nvd.nist.gov
+    type: Allow
+  - to:
+      dnsName: static.nvd.nist.gov
+    type: Allow
